@@ -1,14 +1,14 @@
-# Seather
-Shell script to install a [Seather Masternode](http://seather.online/) on a Linux server running Ubuntu 16.04.  
+# Wagerr
+Shell script to install a [Wagerr Masternode](https://wagerr.com/) on a Linux server running Ubuntu 16.04.  
 This will require a VPS, I use [Vultr](https://www.vultr.com/?ref=7310394).  I recommend using a $5 server.
-This script will install **Seather Core 1.0.0**.
+This script will install **Wagerr Core 1.5.0**.
 ***
 
 ## Installation:
 Log into the server using ssh (Putty for windows or terminal for Mac users) and run the following commands:
 ```
-wget -q https://raw.githubusercontent.com/cryptosharks131/Seather/master/seather_install.sh
-bash seather_install.sh
+wget -q https://raw.githubusercontent.com/cryptosharks131/Wagerr/master/wagerr_install.sh
+bash wagerr_install.sh
 ```
 ***
 
