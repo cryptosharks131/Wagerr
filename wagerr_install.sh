@@ -1,14 +1,14 @@
 #!/bin/bash
 
 TMP_FOLDER=$(mktemp -d)
-CONFIG_FILE='seather.conf'
-CONFIGFOLDER='/root/.seather'
-COIN_DAEMON='/usr/local/bin/seatherd'
-COIN_CLI='/usr/local/bin/seather-cli'
-COIN_REPO='https://github.com/Seather/Seather/releases/download/v1.0.0/linux64.tar.gz'
-COIN_NAME='Seather'
-COIN_RPC=22501
-COIN_PORT=22500
+CONFIG_FILE='wagerr.conf'
+CONFIGFOLDER='/root/.wagerr'
+COIN_DAEMON='/usr/local/bin/wagerrd'
+COIN_CLI='/usr/local/bin/wagerr-cli'
+COIN_REPO='https://github.com/wagerr/wagerr/releases/download/v2.0.0/wagerr-2.0.0-x86_64-linux-gnu.tar.gz'
+COIN_NAME='Wagerr'
+COIN_RPC=55003
+COIN_PORT=55002
 #COIN_BS='http://bootstrap.zip'
 
 NODEIP=$(curl -s4 icanhazip.com)
@@ -25,13 +25,13 @@ function compile_node() {
   COIN_ZIP=$(echo $COIN_REPO | awk -F'/' '{print $NF}')
   tar xvf $COIN_ZIP --strip 1 >/dev/null 2>&1
   compile_error
-  cp seather{d,-cli} /usr/local/bin
+  cp wagerr{d,-cli} /usr/local/bin
   compile_error
   strip $COIN_DAEMON $COIN_CLI
   cd - >/dev/null 2>&1
   rm -rf $TMP_FOLDER >/dev/null 2>&1
-  chmod +x /usr/local/bin/seatherd
-  chmod +x /usr/local/bin/seather-cli
+  chmod +x $COIN_DAEMON
+  chmod +x $COIN_CLI
   clear
 }
 
@@ -256,9 +256,9 @@ function import_bootstrap() {
   COIN_ZIP=$(echo $COIN_BS | awk -F'/' '{print $NF}')
   unzip $COIN_ZIP >/dev/null 2>&1
   compile_error
-  cp -r ~/bootstrap/blocks ~/.seather/blocks
-  cp -r ~/bootstrap/chainstate ~/.seather/chainstate
-  cp -r ~/bootstrap/peers.dat ~/.seather/peers.dat
+  cp -r ~/bootstrap/blocks ~/.wagerr/blocks
+  cp -r ~/bootstrap/chainstate ~/.wagerr/chainstate
+  cp -r ~/bootstrap/peers.dat ~/.wagerr/peers.dat
   rm -r ~/bootstrap/
   rm $COIN_ZIP
 }
