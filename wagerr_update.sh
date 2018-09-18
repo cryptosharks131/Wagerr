@@ -1,10 +1,10 @@
 #!/bin/bash
 
 TMP_FOLDER=$(mktemp -d)
-COIN_DAEMON='/usr/local/bin/seatherd'
-COIN_CLI='/usr/local/bin/seather-cli'
-COIN_REPO='https://github.com/Seather/Seather/releases/download/v1.0.0/linux64.tar.gz'
-COIN_NAME='Seather'
+COIN_DAEMON='/usr/local/bin/wagerrd'
+COIN_CLI='/usr/local/bin/wagerr-cli'
+COIN_REPO='https://github.com/wagerr/wagerr/releases/download/v2.0.0/wagerr-2.0.0-x86_64-linux-gnu.tar.gz'
+COIN_NAME='Wagerr'
 #COIN_BS='http://bootstrap.zip'
 
 RED='\033[0;31m'
@@ -13,20 +13,20 @@ NC='\033[0m'
 
 function update_node() {
   echo -e "Preparing to download updated $COIN_NAME"
-  rm /usr/local/bin/seather*
+  rm /usr/local/bin/wagerr*
   cd $TMP_FOLDER
   wget -q $COIN_REPO
   compile_error
   COIN_ZIP=$(echo $COIN_REPO | awk -F'/' '{print $NF}')
   tar xvf $COIN_ZIP --strip 1 >/dev/null 2>&1
   compile_error
-  cp seather{d,-cli} /usr/local/bin
+  cp wagerr{d,-cli} /usr/local/bin
   compile_error
   strip $COIN_DAEMON $COIN_CLI
   cd - >/dev/null 2>&1
   rm -rf $TMP_FOLDER >/dev/null 2>&1
-  chmod +x /usr/local/bin/seatherd
-  chmod +x /usr/local/bin/seather-cli
+  chmod +x $COIN_DAEMON
+  chmod +x $COIN_CLI
   clear
 }
 
@@ -72,20 +72,20 @@ bsdmainutils libdb4.8++-dev libminiupnpc-dev libgmp3-dev libzmq3-dev ufw fail2ba
 fi
 systemctl stop $COIN_NAME.service
 sleep 3
-pkill -9 seatherd
+pkill -9 wagerrd
 clear
 }
 
 function import_bootstrap() {
-  rm -r ~/.seather/blocks ~/.seather/chainstate ~/.seather/peers.dat
+  rm -r ~/.wagerr/blocks ~/.wagerr/chainstate ~/.wagerr/peers.dat
   wget -q $COIN_BS
   compile_error
   COIN_ZIP=$(echo $COIN_BS | awk -F'/' '{print $NF}')
   unzip $COIN_ZIP >/dev/null 2>&1
   compile_error
-  cp -r ~/bootstrap/blocks ~/.seather/blocks
-  cp -r ~/bootstrap/chainstate ~/.seather/chainstate
-  cp -r ~/bootstrap/peers.dat ~/.seather/peers.dat
+  cp -r ~/bootstrap/blocks ~/.wagerr/blocks
+  cp -r ~/bootstrap/chainstate ~/.wagerr/chainstate
+  cp -r ~/bootstrap/peers.dat ~/.wagerr/peers.dat
   rm -r ~/bootstrap/
   rm $COIN_ZIP
   echo -e "Sync is complete"
