@@ -27,7 +27,7 @@ After the MN is up and running, you need to configure the desktop wallet accordi
 Alias Address Genkey TxHash Output_index
 ```
 * Alias: **MN1**
-* Address: **VPS_IP:22500**
+* Address: **VPS_IP:55002**
 * Genkey: **Masternode GenKey**
 * TxHash: **First value from Step 6** 
 * Output index:  **Second value from Step 6** It can be **0** or **1**
