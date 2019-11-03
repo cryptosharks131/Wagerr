@@ -3,7 +3,7 @@
 TMP_FOLDER=$(mktemp -d)
 COIN_DAEMON='/usr/local/bin/wagerrd'
 COIN_CLI='/usr/local/bin/wagerr-cli'
-COIN_REPO='https://github.com/wagerr/wagerr/releases/download/v3.0.0/wagerr-3.0.0-x86_64-linux-gnu.tar.gz'
+COIN_REPO='https://github.com/wagerr/wagerr/releases/download/v3.1.0/wagerr-3.1.0-x86_64-linux-gnu.tar.gz'
 COIN_NAME='Wagerr'
 #COIN_BS='http://bootstrap.zip'
 
