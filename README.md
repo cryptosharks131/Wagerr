@@ -64,6 +64,3 @@ bash wagerr_update.sh
 ## Donations:  
 
 **WGR**: WaqhuDw1i2EwDMsNqd8nVW3fHin58CgP5j  
-**BTC**: 1FJvtLBszQgY2eKBawov48RwSYy2yqEvn1  
-**ETH**: 0x39acE9917e25E2A04643d30319cF34449A72441B  
-**LTC**: LR1Mmchr6Zz1vj51xecTiEdS1WHfJTVg5t
