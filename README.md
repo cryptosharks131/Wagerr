@@ -61,6 +61,6 @@ bash wagerr_update.sh
 ```
 ***
 
-## Donations:  
+## Tip Jar:  
 
 **WGR**: WaqhuDw1i2EwDMsNqd8nVW3fHin58CgP5j  
