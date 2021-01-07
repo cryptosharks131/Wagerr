@@ -60,7 +60,3 @@ wget -q https://raw.githubusercontent.com/cryptosharks131/Wagerr/master/wagerr_u
 bash wagerr_update.sh
 ```
 ***
-
-## Tip Jar:  
-
-**WGR**: WaqhuDw1i2EwDMsNqd8nVW3fHin58CgP5j  
